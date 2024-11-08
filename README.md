@@ -1,6 +1,10 @@
 # Correctore_Core [beta]
 Устройство для отслеживания положения спины
 
+ВАЖНО!!
+
+Загружать файлы только в репозиторий Correcotor_Core v.2.0
+
 Теория по работе с MPU6050: https://alexgyver.ru/arduino-mpu6050/
 
 
