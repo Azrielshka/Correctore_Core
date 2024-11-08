@@ -1,2 +1,2 @@
-# Correctore_Core
+# Correctore_Core [beta]
 Устройство для отслеживания положения спины
