@@ -16,6 +16,8 @@
 
 ========= Полезные ссылки =========
 
+Начало работы с ESP: https://alexgyver.ru/lessons/esp8266/?ysclid=m38kz3xxtj564148781
+
 Тутор по чат боту телеграма : https://kit.alexgyver.ru/tutorials/fastbot/
 
 Разрабатываемое приложение на GyverHub инфа: https://github.com/GyverLibs/GyverHub
