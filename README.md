@@ -75,3 +75,26 @@ void loop() {
 }
 ```
 
+### Настройка WiFi
+Для подключения к WiFi роутеру можно использовать стандартный код для ESP:
+```cpp
+void setup() {
+    WiFi.mode(WIFI_STA);
+    WiFi.begin("SSID", "PASS");
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.print(".");
+    }
+    // ...
+}
+```
+
+Работа в режиме точки доступа (телефон подключается к сети, раздаваемой ESP).
+```cpp
+void setup() {
+    WiFi.mode(WIFI_AP);
+    WiFi.softAP("My Device");
+    // ...
+}
+```
+
