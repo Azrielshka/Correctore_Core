@@ -22,7 +22,7 @@
 
 Разрабатываемое приложение на GyverHub инфа: https://github.com/GyverLibs/GyverHub
 
-#Туториал по GyverHub
+# Туториал по GyverHub
 ## 1 Установка библиотеки
 Добавить ESP в список плат в Arduino IDE
  - ESP8266 v2.7+ https://arduino.esp8266.com/stable/package_esp8266com_index.json
@@ -31,4 +31,14 @@
 <img src="https://github.com/user-attachments/assets/cfab045a-42d3-43ac-905c-e4d19a74af35" 
 width=45% height=45%>
 
+Для работы GyverHub необходимы библиотеки:
+-	pubsubclient
+-	arduinoWebSockets
+-	StringUtils
+-	GSON
+-	Pairs
+Основные понятия
+-Устройство - микроконтроллер (далее МК) с программой на базе библиотеки GyverHub. МК является сервером, к которому подключаются клиенты
+-Клиент - сайт или приложение GyverHub, которое подключено к устройству
+-Имя сети (префикс) - уникальное имя сети "клиент-устройство", используется клиентом для поиска устройств и по сути является паролем, без которого не получится обнаружить устройство
 
