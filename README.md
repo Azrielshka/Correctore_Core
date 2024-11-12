@@ -20,6 +20,8 @@
 
 Тутор по чат боту телеграма : https://kit.alexgyver.ru/tutorials/fastbot/
 
+Нейросеть можно прикурить вот так!!! https://alexgyver.ru/aiframe/
+
 Разрабатываемое приложение на GyverHub инфа: https://github.com/GyverLibs/GyverHub
 
 # Туториал по GyverHub
