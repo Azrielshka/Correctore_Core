@@ -22,3 +22,13 @@
 
 Разрабатываемое приложение на GyverHub инфа: https://github.com/GyverLibs/GyverHub
 
+#Туториал по GyverHub
+## 1 Установка библиотеки
+Добавить ESP в список плат в Arduino IDE
+ - ESP8266 v2.7+ https://arduino.esp8266.com/stable/package_esp8266com_index.json
+ - ESP32 v2+ https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+
+<img src="https://github.com/user-attachments/assets/cfab045a-42d3-43ac-905c-e4d19a74af35" 
+width=45% height=45%>
+
+
