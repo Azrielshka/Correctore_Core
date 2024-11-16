@@ -38,7 +38,7 @@ width=45% height=45%>
 -	Скачать esp32
 
 <img src="https://github.com/user-attachments/assets/6088c21d-1ff2-4e80-adc2-159ffded3840" 
-width=45% height=45%>
+width=30% height=30%>
 
 
 Для работы GyverHub необходимы библиотеки:
