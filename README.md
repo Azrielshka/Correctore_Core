@@ -180,6 +180,47 @@ if (b.beginRow()) {
 <img src="https://github.com/user-attachments/assets/2132f279-a544-4d14-8d57-5af2c48c412f" 
 width=25% height=25%>
 
+Виджеты кнопок с сигналами о действий
+```cpp
+
+// =================== ДЕЙСТВИЯ ВИДЖЕТА ===================
+
+    // с активных виджетов можно получить сигнал о действии - клик или изменение значения
+    if (b.beginRow()) {
+        // СПОСОБ 1
+        // проверить условие click() - он вернёт true при действии
+        // click() нужно вызывать ПОСЛЕДНИМ в цепочке!!!
+        if (b.Button().click()) Serial.println("click 1");
+
+        // СПОСОБ 2
+        // подключить bool переменную - флаг
+        bool flag = 0;
+        b.Button().attach(&flag);
+        if (flag) Serial.println("click 2");
+
+        // СПОСОБ 3
+        // подключить gh::Flag переменную - флаг
+        // данный флаг сам сбросится в false при проверке!
+        gh::Flag gflag;
+        b.Button().attach(&gflag);
+        if (gflag) Serial.println("click 3");
+        // здесь gflag уже false
+
+        // СПОСОБ 4
+        // подключить функцию-обработчик (см. выше)
+        b.Button().attach(btn_cb);
+
+        // СПОСОБ 5
+        // подключить функцию-обработчик с инфо о билде (см. выше)
+        b.Button().attach(btn_cb_b);
+
+        // attach() может быть НЕ ПОСЛЕДНИМ в цепочке, также их может быть несколько:
+        // b.Button().attach(f1).attach(f2).label("kek");
+
+        b.endRow();
+    }
+```
+
 <img src="https://github.com/user-attachments/assets/e9b61cc9-c973-4ebf-a085-c237cadcef18" 
 width=25% height=25%>
 
