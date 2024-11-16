@@ -35,7 +35,7 @@ width=45% height=45%>
 
 Для работы GyverHub необходимы библиотеки:
 -	pubsubclient
--	arduinoWebSockets
+-	arduinoWebSockets: https://github.com/Links2004/arduinoWebSockets
 -	StringUtils
 -	GSON
 -	Pairs
