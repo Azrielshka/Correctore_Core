@@ -132,3 +132,19 @@ width=25% height=25%>
 <img src="https://github.com/user-attachments/assets/2e62121c-0d34-48e3-bad1-e5faac0ded6a" 
 width=25% height=25%>
 
+Кнопка с параметрами:
+```cpp
+if (b.beginRow()) {
+        // параметры виджета можно задавать цепочкой. Например:
+        b.Button().label(F("my button 1")).color(gh::Colors::Red);
+
+        // также можно продолжить настраивать ПРЕДЫДУЩИЙ виджет, обратившись к widget:
+        b.Button();                        // кнопка без параметров
+        b.widget.label(F("my button 2"));  // настраиваем кнопку выше
+        b.widget.color(gh::Colors::Blue);  // её же
+
+        b.endRow();
+    }
+```
+<img src="https://github.com/user-attachments/assets/2132f279-a544-4d14-8d57-5af2c48c412f" 
+width=25% height=25%>
