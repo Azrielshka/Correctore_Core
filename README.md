@@ -120,3 +120,15 @@ b.Button();
 <img src="https://github.com/user-attachments/assets/5980d098-4f2a-43c8-90a9-a6412ec3db3d" 
 width=25% height=25%>
 
+```cpp
+// есть ещё такой трюк - контейнер сам себя закроет в рамках блока {}
+    // назвать его можно как угодно, передать во внутрь аргумент билдера
+    {
+        gh::Row r(b);  // контейнер сам создастся здесь
+        b.Button();
+        b.Button();
+    }  // контейнер сам закроется здесь
+```
+<img src="https://github.com/user-attachments/assets/2e62121c-0d34-48e3-bad1-e5faac0ded6a" 
+width=25% height=25%>
+
