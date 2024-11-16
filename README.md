@@ -118,5 +118,5 @@ void setup() {
 b.Button();
 ```
 <img src="https://github.com/user-attachments/assets/5980d098-4f2a-43c8-90a9-a6412ec3db3d" 
-width=15% height=15%>
+width=25% height=25%>
 
