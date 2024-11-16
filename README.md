@@ -34,11 +34,11 @@
 width=45% height=45%>
 
 Для работы GyverHub необходимы библиотеки:
--	pubsubclient
+-	pubsubclient: https://github.com/knolleary/pubsubclient
 -	arduinoWebSockets: https://github.com/Links2004/arduinoWebSockets
--	StringUtils
--	GSON
--	Pairs
+-	StringUtils: https://github.com/GyverLibs/StringUtils
+-	GSON: https://github.com/GyverLibs/GSON
+-	Pairs: https://github.com/GyverLibs/Pairs
   
 Основные понятия
 
