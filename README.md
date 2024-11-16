@@ -33,6 +33,14 @@
 <img src="https://github.com/user-attachments/assets/cfab045a-42d3-43ac-905c-e4d19a74af35" 
 width=45% height=45%>
 
+Выбрать менеджер плат:
+-	Скачать esp8266
+-	Скачать esp32
+
+<img src="https://github.com/user-attachments/assets/6088c21d-1ff2-4e80-adc2-159ffded3840" 
+width=45% height=45%>
+
+
 Для работы GyverHub необходимы библиотеки:
 -	pubsubclient: https://github.com/knolleary/pubsubclient
 -	arduinoWebSockets: https://github.com/Links2004/arduinoWebSockets
