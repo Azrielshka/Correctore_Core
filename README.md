@@ -241,4 +241,49 @@ width=25% height=25%>
 <img src="https://github.com/user-attachments/assets/4cf89f87-d1b8-4a70-83c0-9974de38f7ca" 
 width=25% height=25%>
 
+### Пример управления светодиодом на 4 порту ESP по кнопке
 
+```cpp
+#include <GyverHub.h>
+#define LED2 D4
+
+GyverHub hub("MyDevices", "ESP8266", "");  // имя сети, имя устройства, иконка
+bool sost = true;
+bool sw = false;
+gh::Flag gflag;
+// билдер
+void build(gh::Builder& b) {
+  if (b.beginRow()) {
+        // параметры виджета можно задавать цепочкой. Например:
+        b.Button().label(F("LED2")).color(gh::Colors::Red);
+        b.widget.attach(&gflag);
+        b.Switch(&sw).size(1).click();
+        b.endRow();
+    }
+    
+     
+    
+}
+
+void setup() {
+    // подключение к WiFi..
+    pinMode(LED2, OUTPUT);
+    WiFi.mode(WIFI_AP);
+    WiFi.softAP("My Device");
+    // ...
+
+    // настройка MQTT/Serial/Bluetooth..
+    hub.onBuild(build); // подключаем билдер
+    hub.begin();        // запускаем систему
+}
+
+void loop() {
+    hub.tick();         // тикаем тут
+    if (gflag) {
+      sost = !sost;
+      digitalWrite(LED2, sost);
+    }
+
+  
+}
+```
