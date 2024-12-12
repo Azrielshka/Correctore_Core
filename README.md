@@ -334,11 +334,70 @@ void loop() {
 }
 ```
 
-
 <img src="https://github.com/user-attachments/assets/1eaa2170-972a-43ff-91aa-429ad39a19cf" 
 width=25% height=25%>
 
 ### Dpad (тач пад с 4 кнопками) гайвер называет крестовина
+
+Для использования Дпада и джойстика к их виджету нужно привязать переменную типа Pos: ```gh::Pos pos_dpad``` для сохранения в неё показаний. Использовать переменную pos_dpad нужно так:
+
+```
+pos_dpad.changed(); - вернет 1 если значение менялось и 0 если нет
+
+pos_dpad.x; - координату x. Для дпада: 0 - не нажата, 1 - клик по правой стрелке, -1 клик по левой стрелке (в сооттветсвии со скрином 2 с приложения)
+
+pos_dpad.y; - координату y. Для дпада: 0 - не нажата, 1 - клик по верхней стрелке, -1 клик по нижней стрелке (в сооттветсвии со скрином 2 с приложения)
+
+есть еще .dist - расстояние до точки
+
+и вот эти
+
+// точка лежит внутри прямоугольника
+bool inRect(int16_t rx, int16_t ry, uint16_t w, uint16_t h);
+
+// точка лежит внутри окружности
+bool inCircle(int16_t cx, int16_t cy, uint16_t r);
+```
+
+Пример вывода состояния Dpad
+
+```cpp
+#include <GyverHub.h>
+
+GyverHub hub("test", "ESP8266", "");  // имя сети, имя устройства, иконка
+
+gh::Pos pos_dpad; //переменная для dpad ТОЛЬКО типа POS (встроенный тип данных)
+// билдер
+void build(gh::Builder& b) {
+  if (b.beginRow()) {
+      //прикручиваем dpad к переменной pos_dpad по адресу
+      if (b.Dpad(&pos_dpad).color(gh::Colors::Blue).click()) {
+        //после клика выводим показания
+        Serial.print("dpad: ");
+        Serial.print(pos_dpad.x);
+        Serial.print(",");
+        Serial.println(pos_dpad.y);
+      }
+      //b.Space(); //пустой виджет меняет размер
+  }
+  b.endRow();
+}
+
+void setup() {
+    // подключение к WiFi..
+    WiFi.mode(WIFI_AP);
+    WiFi.softAP("My Device");
+    // ...
+    Serial.begin(115200);
+    // настройка MQTT/Serial/Bluetooth..
+    hub.onBuild(build); // подключаем билдер
+    hub.begin();        // запускаем систему
+}
+
+void loop() {
+    hub.tick();         // тикаем тут
+}
+```
 
 <img src="https://github.com/user-attachments/assets/1bcd6da9-984d-4c92-919a-360dddbf3034" 
 width=25% height=25%>
