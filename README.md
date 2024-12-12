@@ -337,3 +337,10 @@ void loop() {
 
 <img src="https://github.com/user-attachments/assets/1eaa2170-972a-43ff-91aa-429ad39a19cf" 
 width=25% height=25%>
+
+### Dpad (тач пад с 4 кнопками) гайвер называет крестовина
+
+<img src="https://github.com/user-attachments/assets/1bcd6da9-984d-4c92-919a-360dddbf3034" 
+width=25% height=25%>
+<img src="https://github.com/user-attachments/assets/7b1c4360-a7b4-4c3c-aa11-cfae466ba522" 
+width=25% height=25%>
