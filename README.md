@@ -293,5 +293,47 @@ void loop() {
     }
 }
 ```
+
+### Пример управления светодиодом на 4 порту ESP по свитчу
+
+```cpp
+#include <GyverHub.h>
+#define LED2 D4
+
+GyverHub hub("test", "ESP8266", "");  // имя сети, имя устройства, иконка
+bool gflag = 0;   // флаг свитча
+// билдер
+void build(gh::Builder& b) {
+  if (b.beginRow()) {
+      //проверяем состояние свитча. Оно записывается в переменную gflag
+      b.Switch(&gflag).size(1).click();   
+   }
+  b.endRow();
+}
+
+void setup() {
+    // подключение к WiFi..
+    pinMode(LED2, OUTPUT);
+    WiFi.mode(WIFI_AP);
+    WiFi.softAP("My Device");
+    // ...
+
+    // настройка MQTT/Serial/Bluetooth..
+    hub.onBuild(build); // подключаем билдер
+    hub.begin();        // запускаем систему
+}
+
+void loop() {
+    hub.tick();         // тикаем тут
+    if(!gflag) {
+      digitalWrite(LED2, HIGH);
+    }
+    else {
+      digitalWrite(LED2, LOW);
+    }
+}
+```
+
+
 <img src="https://github.com/user-attachments/assets/1eaa2170-972a-43ff-91aa-429ad39a19cf" 
 width=25% height=25%>
