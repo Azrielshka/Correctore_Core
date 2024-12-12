@@ -116,7 +116,7 @@ void setup() {
 WiFi.softAP("My Device");
 ```
 
-Затем  в настройках приложения GyverHub задать имя префикса, указанного при создании объекта ```cpp GyverHub hub("test", "ESP8266", "")  ``` и выбрать плату.
+Затем  в настройках приложения GyverHub задать имя префикса, указанного при создании объекта ```GyverHub hub("test", "ESP8266", "");``` и выбрать плату.
 
 <img src="https://github.com/user-attachments/assets/971fce72-3ad2-4f77-9e18-831a3f189285" 
 width=25% height=25%> 
