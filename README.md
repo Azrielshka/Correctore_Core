@@ -247,22 +247,17 @@ width=25% height=25%>
 #include <GyverHub.h>
 #define LED2 D4
 
-GyverHub hub("MyDevices", "ESP8266", "");  // имя сети, имя устройства, иконка
-bool sost = true;
-bool sw = false;
-gh::Flag gflag;
+GyverHub hub("test", "ESP8266", "");  // имя сети, имя устройства, иконка
+bool sost = true; //состояние светодиода
+gh::Flag gflag;   // флаг кнопки  данный флаг сам сбросится в false при проверке!
 // билдер
 void build(gh::Builder& b) {
   if (b.beginRow()) {
         // параметры виджета можно задавать цепочкой. Например:
         b.Button().label(F("LED2")).color(gh::Colors::Red);
         b.widget.attach(&gflag);
-        b.Switch(&sw).size(1).click();
         b.endRow();
     }
-    
-     
-    
 }
 
 void setup() {
@@ -280,11 +275,10 @@ void setup() {
 void loop() {
     hub.tick();         // тикаем тут
     if (gflag) {
+      // здесь gflag уже false
       sost = !sost;
       digitalWrite(LED2, sost);
     }
-
-  
 }
 ```
 <img src="https://github.com/user-attachments/assets/1eaa2170-972a-43ff-91aa-429ad39a19cf" 
