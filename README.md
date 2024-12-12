@@ -154,14 +154,14 @@ void builder_2 (gh::Builder& b) {
 }
 ```
 
-Просто 1 кнопка на строке:
+### Просто 1 кнопка на строке:
 ```cpp
 b.Button();
 ```
 <img src="https://github.com/user-attachments/assets/5980d098-4f2a-43c8-90a9-a6412ec3db3d" 
 width=25% height=25%>
 
-Несколько кнопок на 1 строке:
+### Несколько кнопок на 1 строке:
 
 ```cpp
 // есть ещё такой трюк - контейнер сам себя закроет в рамках блока {}
@@ -175,7 +175,7 @@ width=25% height=25%>
 <img src="https://github.com/user-attachments/assets/2e62121c-0d34-48e3-bad1-e5faac0ded6a" 
 width=25% height=25%>
 
-Кнопка с параметрами:
+### Кнопка с параметрами:
 ```cpp
 if (b.beginRow()) {
         // параметры виджета можно задавать цепочкой. Например:
@@ -192,7 +192,7 @@ if (b.beginRow()) {
 <img src="https://github.com/user-attachments/assets/2132f279-a544-4d14-8d57-5af2c48c412f" 
 width=25% height=25%>
 
-Виджеты кнопок с сигналами о действий
+### Виджеты кнопок с сигналами о действий
 ```cpp
 
 // =============== ПОДКЛЮЧЕНИЕ ПЕРЕМЕННОЙ ===============
@@ -225,7 +225,7 @@ width=25% height=25%>
 <img src="https://github.com/user-attachments/assets/e9b61cc9-c973-4ebf-a085-c237cadcef18" 
 width=25% height=25%>
 
-Обновление показаний
+### Обновление показаний
 
 ```cpp
 
