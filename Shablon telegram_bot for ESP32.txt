@@ -1,9 +1,9 @@
 #include <WiFi.h>
 #include <WiFiClientSecure.h>
 #include <UniversalTelegramBot.h>
-#define WIFI_SSID "Smart_Manuf"
-#define WIFI_PASSWORD "Manuf1439"
-#define BOT_TOKEN "7826250960:AAFREXCV6H90_3Faa4SJDYBe7fgsxOeGe8A"
+#define WIFI_SSID "LOGIN"
+#define WIFI_PASSWORD "PASS"
+#define BOT_TOKEN "TOKEN_BOT"
 
 const unsigned long BOT_MTBS = 1000; // время обновления
 WiFiClientSecure secured_client;
