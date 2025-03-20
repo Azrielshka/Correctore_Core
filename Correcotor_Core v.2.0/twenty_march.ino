@@ -144,8 +144,8 @@ void loop() {
       tone (5, 1000); 
       count1++;
       bot.sendMessage(chat_id, "Выпрямите спину", "");
-      String angle1 = degrees(normaly1[1]) - degrees(ypr_one[1]);
-      String angle2 =degrees(normaly1[2]) - degrees(ypr_one[2]);
+      String angle1 = String(degrees(normaly1[1]) - degrees(ypr_one[1]));
+      String angle2 = String(degrees(normaly1[2]) - degrees(ypr_one[2]));
       bot.sendMessage(chat_id, angle1, "");
       bot.sendMessage(chat_id, angle2, "");
   }
@@ -161,8 +161,8 @@ void loop() {
       digitalWrite(10,HIGH);
       count1++;
       bot.sendMessage(chat_id, "Выпрямите спину", "");
-      String angle3 = degrees(normaly2[1]) - degrees(ypr_two[1]);
-      String angle4 = degrees(normaly2[2]) - degrees(ypr_two[2]);
+      String angle3 = String (degrees(normaly2[1]) - degrees(ypr_two[1]));
+      String angle4 = String (degrees(normaly2[2]) - degrees(ypr_two[2]));
       bot.sendMessage(chat_id, angle3, "");
       bot.sendMessage(chat_id, angle4, "");
       flag_motor = true;
@@ -349,7 +349,7 @@ void kalib_mpu1 () {
   Serial.println(gz);
   calibration_1();
   // выводим значения после калибровки
-  mpu1.getMotion6(,&ax &ay, &az, &gx, &gy, &gz);
+  mpu1.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
   Serial.print(ax); Serial.print(" ");
   Serial.print(ay); Serial.print(" ");
   Serial.print(az); Serial.print(" ");
@@ -362,8 +362,8 @@ void kalib_mpu1 () {
                    "az: " + String(az) + "\n"
                    "gx: " + String(gx) + "\n"
                    "gy: " + String(gy) + "\n"
-                   "gz: " + String(gz) + "\n"
-  bot.sendMessage(chat_id, message, " ")
+                   "gz: " + String(gz) + "\n";
+  bot.sendMessage(chat_id, message, " ");
 }
 
 void kalib_mpu2 () {
@@ -396,8 +396,8 @@ void kalib_mpu2 () {
                    "az: " + String(az) + "\n"
                    "gx: " + String(gx) + "\n"
                    "gy: " + String(gy) + "\n"
-                   "gz: " + String(gz) + "\n"
-  bot.sendMessage(chat_id, message, " ")
+                   "gz: " + String(gz) + "\n";
+  bot.sendMessage(chat_id, message, " ");
 }
 
 void calibration_1() {
@@ -532,8 +532,8 @@ void calibrateForHumans() {
     bot.sendMessage(chat_id, "калибровка датчиков под человека завершена", ""); 
    String message3 = "Метеостанция:\n"
                    "Z: " + String(degrees(normaly1[0])) + "\n"
-                   "Y: " + String((degrees(normaly1[1])) + "\n"
-                   "X: " + String(degrees(normaly1[2]) + "\n"
+                   "Y: " + String(degrees(normaly1[1])) + "\n"
+                   "X: " + String(degrees(normaly1[2])) + "\n";
     bot.sendMessage(chat_id, message3, "");             
     kalibrovka_done = 1;
 }
